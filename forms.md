@@ -9,7 +9,7 @@ ___
 * [Возможные ошибки](#error)
 
 
-## <a id="getting-tags-user"></a> Получение тегов пользователя 
+## <a id="getting-tags-user"></a> Получение тегов пользователя
 [Table of Contents](#table-of-contents)
 
 #### Description:
@@ -34,7 +34,7 @@ Status:
 200 OK
 
 Body:
-["tag1","tag2","tag3"]
+["tagName1","tagName2","tagName3"]
 ```
 
 
