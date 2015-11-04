@@ -1,13 +1,14 @@
 # Tags
 Операции с тегами(метками)
 ___
+
 ### <a id="table-of-contents"></a> Table of Contents
 * [Получение тегов пользователя](#getting-tags-user)
 * [Получение тегов кастомеров](#getting-tags-customers)
 * [Прикрепление тегов](#attaching-tags)
 * [Открепление тегов](#detaching-tags)
 * [Возможные ошибки](#error)
-
+* [Есть вопросы?](#questions)
 
 ## <a id="getting-tags-user"></a> Получение тегов пользователя
 [Table of Contents](#table-of-contents)
@@ -38,7 +39,6 @@ Body:
 ```
 
 
-
 ## <a id="getting-tags-customers"></a> Получение тегов кастомеров
 [Table of Contents](#table-of-contents)
 
@@ -53,8 +53,8 @@ GET /ajax/customers/tags
 #### Parameters:
 Параметры передаются в строке запроса(query string).
 
-| **Name** | **Type** | **Description**|  
-|----------|----------|----------------|  
+| **Name** | **Type** | **Description**|
+|----------|----------|----------------|
 | ids  | Строка | **Required** id'шники кастомеров. Передаются в одной строке через  запятую |
 
 #### Example:
@@ -88,8 +88,8 @@ PATCH /ajax/customers/tags
 #### Parameters:
 Параметры передаются в теле запроса в JSON виде.
 
-| **Name** | **Type** | **Description**|  
-|----------|----------|----------------|  
+| **Name** | **Type** | **Description**|
+|----------|----------|----------------|
 | ids  | коллекция из строк | **Required** Коллекция id'шников кастомеров. |
 | tags | коллекция из строк | Коллекция тэгов.
 
@@ -128,8 +128,8 @@ DELETE /ajax/customers/tags
 #### Parameters:
 Параметры передаются в теле запроса в JSON виде.
 
-| **Name** | **Type** | **Description**|  
-|----------|----------|----------------|  
+| **Name** | **Type** | **Description**|
+|----------|----------|----------------|
 | ids  | коллекция из строк | **Required** Коллекция id'шников кастомеров. |
 | tags | коллекция из строк | Коллекция тэгов.
 
@@ -150,6 +150,7 @@ Status:
 204 No Content
 ```
 
+
 ## <a id="error"></a> Возможные ошибки
 [Table of Contents](#table-of-contents)
 
@@ -169,3 +170,7 @@ Body:
     "message": "'шняга' is not a valid 24 digit hex string."
 }
 ```
+
+
+## <a id="questions"></a> Есть вопросы?
+[Table of Contents](#table-of-contents)
