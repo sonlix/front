@@ -11,46 +11,46 @@ ___
 
 ## Получение тегов пользователя <a name="getting-tags-user"></a>
 
-#### Описание:
+#### Description:
 Ответ запроса присылает все имеющиеся теги авторизованного пользователя, в т.ч. и те которые не используются.
 
-#### Метод и роут:
+#### Method & Route:
 `GET /ajax/users/tags`
 
-#### Параметры:
+#### Parameters:
 Параметры не передаются.
 
-#### Пример:
+#### Example:
 *Request*
 ```
 GET /ajax/users/tags
 ```
 *Response*
 ```
-Status:
+*Status*:
 200 OK
 
-body:
+*Body*:
 ["tag1","tag2","tag3"]
 ```
 
 
 
 ## Получение тегов кастомеров<a name="getting-tags-customers"></a>
-#### Описание:
+#### Description:
 Ответ запроса присылает теги указанных кастомеров. Если у одного кастомера тег есть, а у второго его нет, то в ответе тег все-равно приходит. Если к двум кастомерам прикреплен одиновый тег, то в ответе придет один тег.
 
-#### Метод и роут:
+#### Method & Route:
 `GET /ajax/customers/tags`
 
-#### Параметры:
+#### Parameters:
 Параметры передаются в строке запроса(query string).
 
 | **Name** | **Type** | **Description**|  
 |----------|----------|----------------|  
 | ids  | Строка | **Required** id'шники кастомеров. Передаются в одной строке через  запятую |
 
-#### Пример:
+#### Example:
 К первому кастомеру прикреплен тег `tagName1` ко второму `tagName2`, а к третьему кастомеру прикреплены три тега `tagName1`, `tagName2`, `tagName3`.
 
 *Request*
@@ -59,22 +59,22 @@ GET /ajax/customers/tags?ids=customerId1,customerId2,customerId3
 ```
 *Response*
 ```
-Status:
+*Status*:
 200 OK
 
-body:
+*Body*:
 ["tagName1","tagName2","tagName3"]
 ```
 
 
 ## Прикрепление тегов <a name="attaching-tags"></a>
-#### Описание:
+#### Description:
 Если запрос успешен прикрепляет тег(или несколько тегов) к указанным кастомерам.
 
-#### Метод и роут:
+#### Method & Route:
 `PATCH /ajax/customers/tags`
 
-#### Параметры:
+#### Parameters:
 Параметры передаются в теле запроса в JSON виде.
 
 | **Name** | **Type** | **Description**|  
@@ -82,12 +82,12 @@ body:
 | ids  | коллекция из строк | **Required** Коллекция id'шников кастомеров. |
 | tags | коллекция из строк | Коллекция тэгов.
 
-#### Пример:
+#### Example:
 *Request*
 ```
 PATCH /ajax/customers/tags
 
-body:
+*Body*:
 {
     "ids": ["customerId1", "customerId2", "customerId3"],
     "tags": ["tagName1", "tagName2"]
@@ -95,19 +95,19 @@ body:
 ```
 *Response*
 ```
-Status:
+*Status*:
 204 No Content
 ```
 
 
 ## Открепление тегов<a name="detaching-tags"></a>
-#### Описание:
+#### Description:
 Если запрос успешен открепляет теги от указанных кастомеров.
 
-#### Метод и роут:
+#### Method & Route:
 `DELETE /ajax/customers/tags`
 
-#### Параметры:
+#### Parameters:
 Параметры передаются в теле запроса в JSON виде.
 
 | **Name** | **Type** | **Description**|  
@@ -115,12 +115,12 @@ Status:
 | ids  | коллекция из строк | **Required** Коллекция id'шников кастомеров. |
 | tags | коллекция из строк | Коллекция тэгов.
 
-#### Пример:
+#### Example:
 *Request*
 ```
 DELETE /ajax/customers/tags
 
-body:
+*Body*:
 {
     "ids": ["customerId1", "customerId2", "customerId3"],
     "tags": ["tagName1", "tagName2"]
@@ -128,7 +128,7 @@ body:
 ```
 *Response*
 ```
-Status:
+*Status*:
 204 No Content
 ```
 
@@ -141,10 +141,10 @@ GET /ajax/customers/tags?ids=шняга
 ```
 *Response*
 ```
-Status:
+*Status*:
 500 Internal Server Error
 
-body:
+*Body*:
 {
     "message": "'шняга' is not a valid 24 digit hex string."
 }
