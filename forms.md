@@ -174,3 +174,7 @@ Body:
 
 ## <a id="questions"></a> Есть вопросы?
 [Table of Contents](#table-of-contents)
+
+Если нашли ошибки, недочеты, что-то непонятно или нужно обновить этот раздел пишите сюда:
+* [slack](https://radario.slack.com/messages/@sonlix/)
+* [github](https://github.com/sonlix)
