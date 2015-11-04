@@ -22,15 +22,15 @@ ___
 
 #### Example:
 *Request*
-```
+``` http
 GET /ajax/users/tags
 ```
 *Response*
-```
-*Status*:
+``` http
+Status:
 200 OK
 
-*Body*:
+Body:
 ["tag1","tag2","tag3"]
 ```
 
@@ -54,15 +54,15 @@ GET /ajax/users/tags
 К первому кастомеру прикреплен тег `tagName1` ко второму `tagName2`, а к третьему кастомеру прикреплены три тега `tagName1`, `tagName2`, `tagName3`.
 
 *Request*
-```
+``` http
 GET /ajax/customers/tags?ids=customerId1,customerId2,customerId3
 ```
 *Response*
-```
-*Status*:
+``` http
+Status:
 200 OK
 
-*Body*:
+Body:
 ["tagName1","tagName2","tagName3"]
 ```
 
@@ -84,18 +84,18 @@ GET /ajax/customers/tags?ids=customerId1,customerId2,customerId3
 
 #### Example:
 *Request*
-```
+``` http
 PATCH /ajax/customers/tags
 
-*Body*:
+Body:
 {
     "ids": ["customerId1", "customerId2", "customerId3"],
     "tags": ["tagName1", "tagName2"]
 }
 ```
 *Response*
-```
-*Status*:
+``` http
+Status:
 204 No Content
 ```
 
@@ -117,18 +117,18 @@ PATCH /ajax/customers/tags
 
 #### Example:
 *Request*
-```
+``` http
 DELETE /ajax/customers/tags
 
-*Body*:
+Body:
 {
     "ids": ["customerId1", "customerId2", "customerId3"],
     "tags": ["tagName1", "tagName2"]
 }
 ```
 *Response*
-```
-*Status*:
+``` http
+Status:
 204 No Content
 ```
 
@@ -136,15 +136,15 @@ DELETE /ajax/customers/tags
 #### Неверный формат id
 
 *Request*
-```
+``` http
 GET /ajax/customers/tags?ids=шняга
 ```
 *Response*
-```
-*Status*:
+``` http
+Status:
 500 Internal Server Error
 
-*Body*:
+Body:
 {
     "message": "'шняга' is not a valid 24 digit hex string."
 }
