@@ -95,6 +95,7 @@ PATCH /ajax/customers/tags
 
 #### Example:
 Изначально первый кастомер без прекрепленных тегов, второй с одним прикрепленным тегом `tagName1`, а у третьего кастомера прикрепленны три тега `tagName1`, `tagName2` и `tagName3`.
+
 *Request*
 ``` http
 PATCH /ajax/customers/tags
