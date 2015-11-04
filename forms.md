@@ -1,7 +1,7 @@
 # Tags
 Операции с тегами(метками)
 ___
-### Table of Contents <a id="table-of-contents"></a>
+### <a id="table-of-contents"></a> Table of Contents
 * [Получение тегов пользователя](#getting-tags-user)
 * [Получение тегов кастомеров](#getting-tags-customers)
 * [Прикрепление тегов](#attaching-tags)
