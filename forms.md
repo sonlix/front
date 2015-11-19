@@ -6,6 +6,7 @@ ___
 * [Утилита forms](#utility)
 * [Типы](#types)
 * [Текстовые поля](#text)
+* [Radio кнопки](#radio)
 * [Одиночные поля(single field)](#sigle)
 * [Группы полей(fieldset)](#fieldset)
 
@@ -100,10 +101,10 @@ jQuery в очередной раз соснул, пришлось по-фаст
 *Добавление:*
 ``` HTML
 <form class="form">
-    <input type="text" name="some_field" value="some text" />
+    <input type="text" name="text_field" value="some text" />
 </form>
 ```
-*Получение:*
+*Получение данных из формы:*
 ``` javascript
 var
     form   = document.querySelector('.form'),
@@ -111,9 +112,72 @@ var
 
 console.log(Params);
 {
-    some_field: "some text"
+    text_field: "some text"
 }
 ```
+### Отправка данных через API
+*Обращение к API:*
+``` javascript
+API.segment(Params);
+```
+*request*
+``` http
+POST /ajax/segments/
+
+Body:
+{text_field: "some text"}
+```
+
+## <a id="radio"></a> Radio кнопки(Radio button)
+Радио кнопки уже стилизованны.
+Стили для радио кнопок находятся тут `Content\less\ui\ui_dev.less`.
+
+*Добавление:*
+``` HTML
+<form class="form">
+    <label class="ui-box">
+        <input type="radio" name="radio_name" value="value1" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Cовершали покупки</div>
+    </label>
+
+    <label class="ui-box">
+        <input type="radio" name="radio_name" value="value2" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Не совершали покупки</div>
+    </label>
+
+    <label class="ui-box">
+        <input type="radio" name="radio_name" value="value3" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Последняя покупка - неудача</div>
+    </label>
+</form>
+
+*Получение данных из формы:*
+``` javascript
+// Допустим пользователь выбрал второе значение
+var
+    form   = document.querySelector('.form'),
+    Params = Forms.getParams(form);
+
+console.log(Params);
+{
+    radio_name: "value2"
+}
+```
+
+### Отправка данных через API
+*Обращение к API:*
+``` javascript
+API.segment(Params);
+```
+*request*
+``` http
+POST /ajax/segments/
+
+Body:
+{radio_name: "value2"}
+```
+
+
 ## <a id="sigle"></a> Одиночные поля(single field)
 ## <a id="fieldset"></a> Группы полей(fieldset)
 ## <a id="multi"></a> Мультиполя
