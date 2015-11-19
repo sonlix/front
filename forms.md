@@ -151,6 +151,7 @@ Body:
         <div class="ui-box__box"></div><div class="ui-box__opt">Последняя покупка - неудача</div>
     </label>
 </form>
+```
 
 *Получение данных из формы:*
 ``` javascript
@@ -201,6 +202,7 @@ Checkbox - кнопки стилизованы по тому же принцип
         <div class="ui-box__box"></div><div class="ui-box__opt">Нет аккаунта</div>
     </label>
 </form>
+```
 
 *Получение данных из формы:*
 ``` javascript
