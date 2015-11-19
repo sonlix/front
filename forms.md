@@ -5,6 +5,7 @@ ___
 * [Введение](#intro)
 * [Утилита forms](#utility)
 * [Типы](#types)
+* [Текстовые поля](#text)
 * [Одиночные поля(single field)](#sigle)
 * [Группы полей(fieldset)](#fieldset)
 
@@ -85,7 +86,14 @@ jQuery в очередной раз соснул, пришлось по-фаст
 Возвращает HTML-поле(`HTMLinputElement`)
 
 ## <a id="types"></a> Типы
-## <a id="sigle"></a> Одиночные поля(single field)
+
+
+
+
+
+
+
+## <a id="text"></a> Текстовые поля(text field)
 К таким полям относятся текстовые поля(text, search, date, number и т.п.).
 
 Тут все просто.
@@ -106,5 +114,6 @@ console.log(Params);
     some_field: "some text"
 }
 ```
+## <a id="sigle"></a> Одиночные поля(single field)
 ## <a id="fieldset"></a> Группы полей(fieldset)
 ## <a id="multi"></a> Мультиполя
