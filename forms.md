@@ -125,7 +125,7 @@ API.segment(Params);
 POST /ajax/segments/
 
 Body:
-{text_field: "some text"}
+{"text_field": "some text"}
 ```
 
 ## <a id="radio"></a> Radio кнопки(Radio button)
@@ -174,7 +174,7 @@ API.segment(Params);
 POST /ajax/segments/
 
 Body:
-{radio_name: "value2"}
+{"radio_name": "value2"}
 ```
 
 
