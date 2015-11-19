@@ -54,8 +54,8 @@ ___
 
 #### Аргументы
 Принимает 2 аргумента:
-1. HTML-форма `HTMLFormElement`
-2. Объект с параметрами
+- 1. HTML-форма `HTMLFormElement`
+- 2. Объект с параметрами
 
 #### returns
 Возвращает HTML-форму(`HTMLFormElement`)
