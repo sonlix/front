@@ -7,6 +7,7 @@ ___
 * [Типы](#types)
 * [Текстовые поля](#text)
 * [Radio кнопки](#radio)
+* [Checkbox](#сheckbox)
 * [Одиночные поля(single field)](#sigle)
 * [Группы полей(fieldset)](#fieldset)
 
@@ -175,6 +176,56 @@ POST /ajax/segments/
 
 Body:
 {"radio_name": "value2"}
+```
+
+## <a id="checkbox"></a> Checkbox
+Checkbox - кнопки стилизованы по тому же принципу, что и радио кнопки.
+Файл с стилями находится там же `Content\less\ui\ui_dev.less`.
+Отличается только тип данных, получаемых из формы.
+
+*Добавление:*
+``` HTML
+<form class="form">
+    <label class="ui-box">
+        <input type="checkbox" name="checkbox_name" value="value1" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Вконтакте</div>
+    </label>
+
+    <label class="ui-box">
+        <input type="checkbox" name="checkbox_name" value="value2" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Facebook</div>
+    </label>
+
+    <label class="ui-box">
+        <input type="checkbox" name="checkbox_name" value="value3" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Нет аккаунта</div>
+    </label>
+</form>
+
+*Получение данных из формы:*
+``` javascript
+// Допустим пользователь выбрал первое и второе значение
+var
+    form   = document.querySelector('.form'),
+    Params = Forms.getParams(form);
+
+console.log(Params);
+{
+    checkbox_name: ['value1', 'value2']
+}
+```
+
+### Отправка данных через API
+*Обращение к API:*
+``` javascript
+API.segment(Params);
+```
+*request*
+``` http
+POST /ajax/segments/
+
+Body:
+{"checkbox_name": "['value1', 'value2']"}
 ```
 
 
