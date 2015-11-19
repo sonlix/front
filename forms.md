@@ -7,7 +7,7 @@ ___
 * [Типы](#types)
 * [Текстовые поля](#text)
 * [Radio кнопки](#radio)
-* [Checkbox](#сheckbox)
+* [Checkbox](#checkbox)
 * [Одиночные поля(single field)](#sigle)
 * [Группы полей(fieldset)](#fieldset)
 
