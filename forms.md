@@ -12,6 +12,8 @@ ___
 * [Кнопки(buttons)](#buttons)
 * [Группы полей(fieldset)](#fieldset)
 * [Мультиполя](#multi)
+* [Мультиполя c radio-кнопками](#multi-radio)
+* [Именные группы](#name-fieldset)
 
 
 ## <a id="intro"></a> Введение
@@ -90,6 +92,23 @@ jQuery в очередной раз соснул, пришлось по-фаст
 Возвращает HTML-поле(`HTMLinputElement`)
 
 ## <a id="types"></a> Типы
+Надобность в типах возникла из-за формирования GET-запросов, т.к. неизвестно что за массив пришел и как его обрабатывать.
+
+Тип данных присваивается к массиву или объекту с данными как свойство со значением.
+Это свойство нельзя удалить или перезаписать, оно неперечисляется в циклах типа `for-in` или `forEach` его можно только прочитать.
+Имя этого свойства `_type`
+
+На данный момент есть три типа полей.
+
+### Тип array
+Обычный массив, при обработке такие массивы сериализуются в строку.
+
+### Тип fieldset
+Объект с данными группы полей. При обработке таких объектов меняется контекст с параметрами.
+
+### Тип fieldsetArray
+Массив(колекция) с fieldset'ами. При обработке пробегается по всему массиву, каждый его элемент обрабатывает как `fieldset`, передавая нужный контекст.
+
 
 
 
@@ -400,3 +419,31 @@ API.customers(Params);
 ``` http
 GET /ajax/customers?multifields=field1:text1+field2:text2+field3:text3+field4:text4,field1:text5+field2:text6+field3:text7+field4:text8
 ```
+
+
+## <a id="multi-radio"></a> Мультиполя c radio-кнопками
+Одна из проблем мультиполей это радио-кнопки с одиноковыми именами.
+Если выделяем кнопку в одном fieldset'е, то выделение исчезает из другого, а этого быть не должно.
+Решение проблемы сейчас не реализовано, только есть пару фиксов, которые начинают оборачиваться проблемами.
+
+*Проблема: *
+``` HTML
+<form class="form">
+<fieldset name="multifields[]">
+    <label class="ui-box">
+        <input type="checkbox" name="checkbox_name" value="value1" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Value</div>
+    </label>
+</fieldset>
+<fieldset name="multifields[]">
+    <label class="ui-box">
+        <input type="checkbox" name="checkbox_name" value="value1" />
+        <div class="ui-box__box"></div><div class="ui-box__opt">Value</div>
+    </label>
+</fieldset>
+</form>
+```
+
+
+## <a id="name-fieldset"></a> Именные группы
+Сейчас это фича неиспользуется(хоть и запиленна), смысла в ней сейчас нет в будущем скорее всего выпилю её.
