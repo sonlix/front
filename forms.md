@@ -8,7 +8,8 @@ ___
 * [Текстовые поля](#text)
 * [Radio кнопки](#radio)
 * [Checkbox](#checkbox)
-* [Одиночные поля(single field)](#sigle)
+* [Select](#select)
+* [Кнопки(buttons)](#buttons)
 * [Группы полей(fieldset)](#fieldset)
 
 
@@ -230,7 +231,100 @@ Body:
 {"checkbox_name": "['value1', 'value2']"}
 ```
 
+## <a id="select"></a> Select
+Селект-поля сыроваты, сейчас работает отправка только с типом "select-one"(выбор одного значения). "select-multiple"(выбор нескольких значений) сейчас не работает.
 
-## <a id="sigle"></a> Одиночные поля(single field)
+Селект-поля добавляются с помощью плагина `Selectize`, в будущем планирую его выпилить из селект-полей. CSS-класс `select`, используется при инициализации плагина `Selectize`.
+*Добавление:*
+``` HTML
+<form class="form">
+    <select name="interval" class="select">
+        <option value="month">Месяц</option>
+        <option value="week">Неделя</option>
+        <option value="day">День</option>
+    </select>
+</form>
+```
+
+*Получение данных из формы:*
+``` javascript
+// Допустим пользователь выбрал третье значение
+var
+    form   = document.querySelector('.form'),
+    Params = Forms.getParams(form);
+
+console.log(Params);
+{
+    interval: 'day'
+}
+```
+
+### Отправка данных через API
+*Обращение к API:*
+``` javascript
+API.segment(Params);
+```
+*request*
+``` http
+POST /ajax/segments/
+
+Body:
+{"interval": 'day'}
+```
+
+## <a id="buttons"></a> Кнопки(buttons)
+Кнопки сброса/отправки в объект с параметрами не попападают.
+
+*Пример:*
+``` HTML
+<form class="form">
+    <input type="text" name="text_field" value="some text" />
+    <input type="reset" value="reset" />
+    <button type="submit">Отправить</button>
+</form>
+```
+
+*Получение данных из формы:*
+``` javascript
+var
+    form   = document.querySelector('.form'),
+    Params = Forms.getParams(form);
+
+console.log(Params);
+{
+    text_field: "some text"
+}
+```
+
 ## <a id="fieldset"></a> Группы полей(fieldset)
+Поля внутри тегов `<fieldset>` считаются группой полей.
+Для таких групп можно применить некоторые фичи "Именные группы" и "Мультиполя".
+
+*Добавление:*
+``` HTML
+<form class="form">
+    <fieldset>
+        <input type="text" name="field1" value="text1" />
+        <input type="text" name="field2" value="text2" />
+        <input type="text" name="field3" value="text3" />
+        <input type="text" name="field4" value="text4" />
+    </fieldset>
+</form>
+```
+
+*Получение данных из формы:*
+``` javascript
+var
+    form   = document.querySelector('.form'),
+    Params = Forms.getParams(form);
+
+console.log(Params);
+{
+    field1: 'text1',
+    field2: 'text2',
+    field3: 'text3',
+    field4: 'text4'
+}
+```
+
 ## <a id="multi"></a> Мультиполя
