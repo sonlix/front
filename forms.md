@@ -328,3 +328,47 @@ console.log(Params);
 ```
 
 ## <a id="multi"></a> Мультиполя
+Чтобы сделать поля мультиполями нужно к окончанию имени в теге `<fieldset>` добавить квадратные скобки.
+
+*Добавление:*
+``` HTML
+<form class="form">
+    <fieldset name="multifields[]">
+        <input type="text" name="field1" value="text1" />
+        <input type="text" name="field2" value="text2" />
+        <input type="text" name="field3" value="text3" />
+        <input type="text" name="field4" value="text4" />
+    </fieldset>
+    <fieldset name="multifields[]">
+        <input type="text" name="field1" value="text5" />
+        <input type="text" name="field2" value="text6" />
+        <input type="text" name="field3" value="text7" />
+        <input type="text" name="field4" value="text8" />
+    </fieldset>
+</form>
+```
+
+*Получение данных из формы:*
+``` javascript
+var
+    form   = document.querySelector('.form'),
+    Params = Forms.getParams(form);
+
+console.log(Params);
+{
+    multifields: [
+        {
+            field1: 'text1',
+            field2: 'text2',
+            field3: 'text3',
+            field4: 'text4'
+        },
+        {
+            field1: 'text5',
+            field2: 'text6',
+            field3: 'text7',
+            field4: 'text8'
+        }
+    ]
+}
+```
