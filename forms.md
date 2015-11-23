@@ -358,17 +358,20 @@ console.log(Params);
 {
     multifields: [
         {
+            _type: 'fieldset',
             field1: 'text1',
             field2: 'text2',
             field3: 'text3',
             field4: 'text4'
         },
         {
+            _type: 'fieldset',
             field1: 'text5',
             field2: 'text6',
             field3: 'text7',
             field4: 'text8'
-        }
+        },
+        _type: 'fieldsetArray'
     ]
 }
 ```
