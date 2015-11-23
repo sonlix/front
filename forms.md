@@ -375,3 +375,16 @@ console.log(Params);
     ]
 }
 ```
+
+### Отправка данных через API(Параметры передаются в теле запроса)
+*Обращение к API:*
+``` javascript
+API.segment(Params);
+```
+*request*
+``` http
+POST /ajax/segments/
+
+Body:
+{'multifields': [{'field1': 'text1', 'field2': 'text2', 'field3': 'text3', 'field4': 'text4'}, {'field1': 'text5', 'field2': 'text6', 'field3': 'text7', 'field4': 'text8'}]}
+```
