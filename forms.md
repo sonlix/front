@@ -11,6 +11,7 @@ ___
 * [Select](#select)
 * [Кнопки(buttons)](#buttons)
 * [Группы полей(fieldset)](#fieldset)
+* [Мультиполя](#multi)
 
 
 ## <a id="intro"></a> Введение
@@ -269,7 +270,7 @@ API.segment(Params);
 POST /ajax/segments/
 
 Body:
-{"interval": 'day'}
+"{'interval': 'day'}"
 ```
 
 ## <a id="buttons"></a> Кнопки(buttons)
